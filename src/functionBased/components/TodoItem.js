@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./TodoItem.module.css"
+import { FaTrash } from "react-icons/fa"
 
 
 class TodoItem extends React.Component{
@@ -57,8 +58,10 @@ class TodoItem extends React.Component{
                     <span style={ completed ? completedStyle : null }>
                         { this.props.todo.title }
                     </span>
-                        
-                    <button onClick={()=> this.props.deleteTodoProps( this.props.todo.id )}>delete</button>
+
+                    <button onClick={() => this.props.deleteTodoProps(this.props.todo.id)}>
+                        <FaTrash style={{ color: "orangered", fontSize: "16px" }} />
+                    </button>
 
                 </div>
 

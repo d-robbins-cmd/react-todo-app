@@ -17,7 +17,7 @@ class TodoContainer extends React.Component{
         }
     }
 
-    //immediately after component is put into the DOM
+    //if there's any todos in local storage, put them in our state
     componentDidMount(){
         const temp = localStorage.getItem( "todos" )
         const loadedTodos = JSON.parse( temp )
@@ -28,8 +28,6 @@ class TodoContainer extends React.Component{
         }
         console.log( 'componentDidMount' )
     }
-
-
 
     setUpdate = ( updatedTitle, id ) =>{
         this.setState({
@@ -43,13 +41,11 @@ class TodoContainer extends React.Component{
     }
 
     addTodoItem = title => {
-
         const newTodo = {
             id: uuidv4(), 
             title: title, 
             completed: false
         }
-
         this.setState({
             todos: [...this.state.todos, newTodo]
         })
