@@ -5,7 +5,7 @@ import { FaTrash } from "react-icons/fa"
 
 class TodoItem extends React.Component{
 
-    
+
     state = {
         editing: false
     }
@@ -23,6 +23,7 @@ class TodoItem extends React.Component{
             })
         }
     }
+    
 
     render(){
 
